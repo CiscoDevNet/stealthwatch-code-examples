@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "073025c8-74ae-4827-abe4-f9e67a9ef44e",
-		"name": "Stealthwatch Enterprise - SOAP",
+		"_postman_id": "da451553-6640-4ba3-baf9-e93a8bad7fde",
+		"name": "SOLUTIONS - Stealthwatch Enterprise - SOAP API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -13,12 +13,12 @@
 					"basic": [
 						{
 							"key": "password",
-							"value": "C1sco12345",
+							"value": "{{password}}",
 							"type": "string"
 						},
 						{
 							"key": "username",
-							"value": "admin",
+							"value": "{{username}}",
 							"type": "string"
 						}
 					]
@@ -34,7 +34,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <soapenv:Body>\n        <getHostSnapshot>\n            <host-filter domain-id=\"123\">\n                <host-selection>\n                    <ip-address-selection value=\"10.10.101.24\"/>\n                </host-selection>\n            </host-filter>\n        </getHostSnapshot>\n    </soapenv:Body>\n</soapenv:Envelope>"
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <soapenv:Body>\n        <getHostSnapshot>\n            <host-filter domain-id=\"{{tenant-id}}\">\n                <host-selection>\n                    <ip-address-selection value=\"10.10.101.24\"/>\n                </host-selection>\n            </host-filter>\n        </getHostSnapshot>\n    </soapenv:Body>\n</soapenv:Envelope>"
 				},
 				"url": {
 					"raw": "https://{{STEALTHWATCH-SMC}}/smc/swsService/hosts",
@@ -73,5 +73,6 @@
 				]
 			}
 		}
-	]
+	],
+	"protocolProfileBehavior": {}
 }

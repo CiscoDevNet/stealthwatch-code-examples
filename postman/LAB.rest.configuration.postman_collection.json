@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "edccd8d8-5468-481b-b7eb-db55a36f2e6c",
-		"name": "Stealthwatch Enterprise - REST (Configuration Mgmt.)",
+		"_postman_id": "94809050-f3fd-4df9-ab5b-82ff4f94ccc9",
+		"name": "LAB - Stealthwatch Enterprise - Configuration Mgmt. REST API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -73,10 +73,6 @@
 						"value": ""
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://{{STEALTHWATCH-SMC}}/sw-reporting/v1/tenants",
 					"protocol": "https",
@@ -114,10 +110,6 @@
 						"value": ""
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://{{STEALTHWATCH-SMC}}/smc-configuration/rest/v1/tenants/:tenant-id/tags/",
 					"protocol": "https",
@@ -174,7 +166,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "[\n    {\n        \"name\": \"<TO-DO>\",\n        \"ranges\": [\n            \"149.202.170.60\",\n            \"23.129.64.101\",\n            \"37.187.129.166\",\n            \"91.146.121.3\"\n        ],\n        \"hostBaselines\": false,\n        \"suppressExcludedServices\": true,\n        \"inverseSuppression\": false,\n        \"hostTrap\": false,\n        \"sendToCta\": false,\n        \"location\": \"OUTSIDE\",\n        \"parentId\": 0\n    }\n]"
+					"raw": "[\n    {\n        \"name\": \"<TO-DO>\",\n        \"location\": \"OUTSIDE\",\n        \"description\": \"A sample of a threat feed\",\n        \"ranges\": [\n            \"149.202.170.60\",\n            \"23.129.64.101\",\n            \"37.187.129.166\",\n            \"91.146.121.3\"\n        ],\n        \"hostBaselines\": false,\n        \"suppressExcludedServices\": true,\n        \"inverseSuppression\": false,\n        \"hostTrap\": false,\n        \"sendToCta\": false,\n        \"parentId\": 0\n    }\n]"
 				},
 				"url": {
 					"raw": "https://{{STEALTHWATCH-SMC}}/smc-configuration/rest/v1/tenants/:tenant-id/tags/",
@@ -195,61 +187,6 @@
 						{
 							"key": "tenant-id",
 							"value": "{{tenant-id}}"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Host Group (Tag) Details",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "b12b7c80-d1af-47e8-be02-2ddc0cc25807",
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Cookie",
-						"value": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "https://{{STEALTHWATCH-SMC}}/smc-configuration/rest/v1/tenants/:tenant-id/tags/:tag-id",
-					"protocol": "https",
-					"host": [
-						"{{STEALTHWATCH-SMC}}"
-					],
-					"path": [
-						"smc-configuration",
-						"rest",
-						"v1",
-						"tenants",
-						":tenant-id",
-						"tags",
-						":tag-id"
-					],
-					"variable": [
-						{
-							"key": "tenant-id",
-							"value": "{{tenant-id}}"
-						},
-						{
-							"key": "tag-id",
-							"value": "<TO-DO>"
 						}
 					]
 				}
@@ -286,7 +223,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"id\": <TO-DO>,\n    \"name\": \"<TO-DO>\",\n    \"ranges\": [\n        \"149.202.170.60\",\n        \"23.129.64.101\",\n        \"37.187.129.166\",\n        \"91.146.121.3\",\n        \"209.182.184.2\"\n    ],\n    \"hostBaselines\": false,\n    \"suppressExcludedServices\": true,\n    \"inverseSuppression\": false,\n    \"hostTrap\": false,\n    \"sendToCta\": false,\n    \"domainId\": {{tenant-id}},\n    \"location\": \"OUTSIDE\",\n    \"parentId\": 0\n}"
+					"raw": "{\n    \"id\": <TO-DO>,\n    \"name\": \"<TO-DO>\",\n    \"location\": \"OUTSIDE\",\n    \"ranges\": [\n        \"149.202.170.60\",\n        \"23.129.64.101\",\n        \"37.187.129.166\",\n        \"91.146.121.3\",\n        \"216.83.162.230\"\n    ],\n    \"description\": \"A sample of a threat feed\",\n    \"hostBaselines\": false,\n    \"suppressExcludedServices\": true,\n    \"inverseSuppression\": false,\n    \"hostTrap\": false,\n    \"sendToCta\": false,\n    \"domainId\": {{tenant-id}},\n    \"parentId\": 0\n}"
 				},
 				"url": {
 					"raw": "https://{{STEALTHWATCH-SMC}}/smc-configuration/rest/v1/tenants/:tenant-id/tags/:tag-id",
@@ -371,5 +308,6 @@
 				]
 			}
 		}
-	]
+	],
+	"protocolProfileBehavior": {}
 }

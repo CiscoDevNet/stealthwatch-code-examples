@@ -1,12 +1,12 @@
 {
 	"info": {
-		"_postman_id": "e697054a-88e0-4493-8181-db6c2ff1b7d3",
-		"name": "SOLUTIONS - Stealthwatch Enterprise - REST (Configuration Mgmt.)",
+		"_postman_id": "785f554a-5c7d-4aa9-a394-39bf713735d0",
+		"name": "SOLUTIONS - Stealthwatch Enterprise - Configuration Mgmt. REST API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "SOLUTION - Login",
+			"name": "Login",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -24,12 +24,12 @@
 					"urlencoded": [
 						{
 							"key": "username",
-							"value": "admin",
+							"value": "{{username}}",
 							"type": "text"
 						},
 						{
 							"key": "password",
-							"value": "C1sco12345",
+							"value": "{{password}}",
 							"type": "text"
 						}
 					]
@@ -51,7 +51,7 @@
 			"response": []
 		},
 		{
-			"name": "SOLUTION - Get Domains (Tenants)",
+			"name": "Get Domains (Tenants)",
 			"event": [
 				{
 					"listen": "test",
@@ -73,10 +73,6 @@
 						"value": ""
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://{{STEALTHWATCH-SMC}}/sw-reporting/v1/tenants",
 					"protocol": "https",
@@ -93,7 +89,7 @@
 			"response": []
 		},
 		{
-			"name": "SOLUTION - Get Host Groups (Tags)",
+			"name": "Get Host Groups (Tags)",
 			"event": [
 				{
 					"listen": "test",
@@ -114,10 +110,6 @@
 						"value": ""
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://{{STEALTHWATCH-SMC}}/smc-configuration/rest/v1/tenants/:tenant-id/tags/",
 					"protocol": "https",
@@ -136,7 +128,7 @@
 					"variable": [
 						{
 							"key": "tenant-id",
-							"value": "123"
+							"value": "{{tenant-id}}"
 						}
 					]
 				}
@@ -144,7 +136,7 @@
 			"response": []
 		},
 		{
-			"name": "SOLUTION - Add Host Group (Tag)",
+			"name": "Add Host Group (Tag)",
 			"event": [
 				{
 					"listen": "test",
@@ -174,7 +166,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "[\n    {\n        \"name\": \"Sample Threat Feed\",\n        \"ranges\": [\n            \"149.202.170.60\",\n            \"23.129.64.101\",\n            \"37.187.129.166\",\n            \"91.146.121.3\"\n        ],\n        \"hostBaselines\": false,\n        \"suppressExcludedServices\": true,\n        \"inverseSuppression\": false,\n        \"hostTrap\": false,\n        \"sendToCta\": false,\n        \"location\": \"OUTSIDE\",\n        \"parentId\": 0\n    }\n]"
+					"raw": "[\n    {\n        \"name\": \"Sample Threat Feed\",\n        \"location\": \"OUTSIDE\",\n        \"description\": \"A sample of a threat feed\",\n        \"ranges\": [\n            \"149.202.170.60\",\n            \"23.129.64.101\",\n            \"37.187.129.166\",\n            \"91.146.121.3\"\n        ],\n        \"hostBaselines\": false,\n        \"suppressExcludedServices\": true,\n        \"inverseSuppression\": false,\n        \"hostTrap\": false,\n        \"sendToCta\": false,\n        \"parentId\": 0\n    }\n]"
 				},
 				"url": {
 					"raw": "https://{{STEALTHWATCH-SMC}}/smc-configuration/rest/v1/tenants/:tenant-id/tags/",
@@ -202,7 +194,7 @@
 			"response": []
 		},
 		{
-			"name": "SOLUTION - Get Host Group (Tag) Details",
+			"name": "Get Host Group (Tag) Details",
 			"event": [
 				{
 					"listen": "test",
@@ -223,10 +215,6 @@
 						"value": ""
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://{{STEALTHWATCH-SMC}}/smc-configuration/rest/v1/tenants/:tenant-id/tags/:tag-id",
 					"protocol": "https",
@@ -257,7 +245,7 @@
 			"response": []
 		},
 		{
-			"name": "SOLUTION - Update Host Group (Tag)",
+			"name": "Update Host Group (Tag)",
 			"event": [
 				{
 					"listen": "test",
@@ -286,7 +274,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"id\": {{tag-id}},\n    \"name\": \"Sample Threat Feed\",\n    \"ranges\": [\n        \"149.202.170.60\",\n        \"23.129.64.101\",\n        \"37.187.129.166\",\n        \"91.146.121.3\",\n        \"209.182.184.2\"\n    ],\n    \"hostBaselines\": false,\n    \"suppressExcludedServices\": true,\n    \"inverseSuppression\": false,\n    \"hostTrap\": false,\n    \"sendToCta\": false,\n    \"domainId\": {{tenant-id}},\n    \"location\": \"OUTSIDE\",\n    \"parentId\": 0\n}"
+					"raw": "{\n    \"id\": {{tag-id}},\n    \"name\": \"Sample Threat Feed\",\n    \"location\": \"OUTSIDE\",\n    \"ranges\": [\n        \"149.202.170.60\",\n        \"23.129.64.101\",\n        \"37.187.129.166\",\n        \"91.146.121.3\",\n        \"216.83.162.230\"\n    ],\n    \"description\": \"A sample of a threat feed\",\n    \"hostBaselines\": false,\n    \"suppressExcludedServices\": true,\n    \"inverseSuppression\": false,\n    \"hostTrap\": false,\n    \"sendToCta\": false,\n    \"domainId\": {{tenant-id}},\n    \"parentId\": 0\n}"
 				},
 				"url": {
 					"raw": "https://{{STEALTHWATCH-SMC}}/smc-configuration/rest/v1/tenants/:tenant-id/tags/:tag-id",
@@ -318,7 +306,7 @@
 			"response": []
 		},
 		{
-			"name": "SOLUTION - Delete Host Group (Tag)",
+			"name": "Delete Host Group (Tag)",
 			"event": [
 				{
 					"listen": "test",
@@ -373,7 +361,7 @@
 			"response": []
 		},
 		{
-			"name": "SOLUTION - Logout",
+			"name": "Logout",
 			"request": {
 				"method": "DELETE",
 				"header": [
@@ -426,5 +414,6 @@
 				]
 			}
 		}
-	]
+	],
+	"protocolProfileBehavior": {}
 }
