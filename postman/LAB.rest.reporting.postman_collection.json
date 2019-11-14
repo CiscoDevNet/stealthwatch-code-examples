@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "15f574d2-40a4-452d-aa35-30d91ccb9798",
+		"_postman_id": "d89b16b3-82ea-462f-af15-247750b136e8",
 		"name": "LAB - Stealthwatch Enterprise - Reporting REST API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -321,7 +321,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"startDateTime\": \"{{start-timestamp}}\",\n    \"endDateTime\": \"{{end-timestamp}}\",\n    \"recordLimit\": 500,\n    \"subject\": {\n        \"ipAddresses\": {\n            \"includes\": [\"<TO-DO>\"],\n            \"excludes\": []\n        },\n        \"hostGroups\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"username\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"macAddress\": {\n            \"includes\": [],\n            \"excludes\": []\n        }\n    },\n    \"peer\": {\n        \"ipAddresses\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"hostGroups\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"username\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"macAddress\": {\n            \"includes\": [],\n            \"excludes\": []\n        }\n    },\n    \"flow\": {\n        \"tcpUdpPorts\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"applications\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"flowDirection\": \"BOTH\",\n        \"byteCount\": [],\n        \"packetCount\": [],\n        \"payload\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"flowDataSource\": [],\n        \"protocol\": [],\n        \"includeInterfaceData\": false\n    }\n}"
+					"raw": "{\n    \"startDateTime\": \"{{start-timestamp}}\",\n    \"endDateTime\": \"{{end-timestamp}}\",\n    \"recordLimit\": 500,\n    \"subject\": {\n        \"ipAddresses\": {\n            \"includes\": [\"<TO-DO>\"],\n            \"excludes\": []\n        },\n        \"hostGroups\": {\n            \"includes\": [],\n            \"excludes\": []\n        }\n    },\n    \"peer\": {\n        \"ipAddresses\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"hostGroups\": {\n            \"includes\": [],\n            \"excludes\": []\n        }\n    },\n    \"flow\": {\n        \"tcpUdpPorts\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"applications\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"flowDirection\": \"BOTH\",\n        \"byteCount\": [],\n        \"packetCount\": [],\n        \"payload\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"flowDataSource\": [],\n        \"protocol\": [],\n        \"includeInterfaceData\": false\n    }\n}"
 				},
 				"url": {
 					"raw": "https://{{STEALTHWATCH-SMC}}/sw-reporting/v2/tenants/:tenant-id/flows/queries",
