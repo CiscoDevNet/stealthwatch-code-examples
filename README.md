@@ -11,3 +11,9 @@ The Cognitive Intelligence Incidents REST API is disabled by default. To enable 
 * Restart web server on your SMC system: `systemctl restart lc-tomcat`
 
 *(Note: The API returns CTA incidents for all domains and expects tenantId to be 0 in the API path parameter. Requesting data for any specific tenant will result in error.)*
+
+For Updating CTA Postman to only show Dusti.hilton, add the following to pre-request JavaScript functionality:
+```
+var url = request.url;
+pm.request.url = url + "?ipAddress=10.201.3.154";
+```
